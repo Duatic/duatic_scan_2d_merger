@@ -44,21 +44,22 @@ install(DIRECTORY include
 )
 
 if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  set(ament_cmake_copyright_FOUND TRUE)
-  set(ament_cmake_cpplint_FOUND TRUE)
-  set(ament_cmake_uncrustify_FOUND TRUE)
-  set(ament_cmake_xmllint_FOUND TRUE)  # package name starts with a digit; xmllint rejects it
-  ament_lint_auto_find_test_dependencies()
-
+  # Linting is handled by pre-commit (see .pre-commit-config.yaml), not the
+  # ament_lint test suite, so it is intentionally not wired up here.
   find_package(ament_cmake_gtest REQUIRED)
   find_package(tf2_ros REQUIRED)
 
   ament_add_gtest(test_scan_merger test/test_scan_merger.cpp)
   target_include_directories(test_scan_merger PRIVATE include)
-  target_link_libraries(test_scan_merger ${COMPONENT_NAME} Threads::Threads)
-  ament_target_dependencies(test_scan_merger
-    rclcpp sensor_msgs geometry_msgs tf2_ros tf2_geometry_msgs)
+  # Link against modern namespaced targets rather than ament_target_dependencies,
+  # which was removed in ROS 2 Lyrical/Rolling.
+  target_link_libraries(test_scan_merger
+    ${COMPONENT_NAME}
+    Threads::Threads
+    rclcpp::rclcpp
+    ${sensor_msgs_TARGETS}
+    ${geometry_msgs_TARGETS}
+    tf2_ros::tf2_ros)
 endif()
 
 # Opts in to the scoped header install layout that becomes the default in Kilted Kaiju.

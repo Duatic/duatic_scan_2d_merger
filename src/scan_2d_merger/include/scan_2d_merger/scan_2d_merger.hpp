@@ -26,16 +26,9 @@
  * @date 2026-06-03
  */
 #pragma once
-
-#include "rclcpp/rclcpp.hpp"
-#include "sensor_msgs/msg/laser_scan.hpp"
-#include "tf2_ros/buffer.h"
-#include "tf2_ros/transform_listener.h"
-#include "tf2/exceptions.h"
-#include "tf2/LinearMath/Transform.h"
+#include <barrier>
 
 #include <atomic>
-#include <barrier>
 #include <cmath>
 #include <deque>
 #include <limits>
@@ -44,6 +37,13 @@
 #include <string>
 #include <thread>
 #include <vector>
+
+#include "rclcpp/rclcpp.hpp"
+#include "sensor_msgs/msg/laser_scan.hpp"
+#include "tf2_ros/buffer.hpp"
+#include "tf2_ros/transform_listener.hpp"
+#include "tf2/exceptions.hpp"
+#include "tf2/LinearMath/Transform.hpp"
 
 namespace util
 {
@@ -123,4 +123,4 @@ private:
   void workerLoop(std::size_t idx);
 };
 
-} // namespace util
+}  // namespace util
