@@ -21,6 +21,5 @@ jobs:
     uses: Duatic/ci-workflows/.github/workflows/ci_orchestrator.yml@v1
     with:
       ros_distro: ${{ inputs.ros_distro }}
-      runner: self-hosted
       badge_gist_id: d2906ca9c367e68f47e636da2059be24
     secrets: inherit
