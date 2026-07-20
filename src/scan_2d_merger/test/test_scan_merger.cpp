@@ -143,7 +143,7 @@ protected:
   // Broadcasts a static TF and spins ~300 ms to let the merger's buffer pick it up.
   void broadcastTF(const geometry_msgs::msg::TransformStamped& ts)
   {
-    auto bc = std::make_shared<tf2_ros::StaticTransformBroadcaster>(helper_);
+    auto bc = std::make_shared<tf2_ros::StaticTransformBroadcaster>(*helper_);
     bc->sendTransform(ts);
     auto deadline = std::chrono::steady_clock::now() + 300ms;
     while (std::chrono::steady_clock::now() < deadline)
