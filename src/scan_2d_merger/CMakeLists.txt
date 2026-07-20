@@ -44,13 +44,8 @@ install(DIRECTORY include
 )
 
 if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  set(ament_cmake_copyright_FOUND TRUE)
-  set(ament_cmake_cpplint_FOUND TRUE)
-  set(ament_cmake_uncrustify_FOUND TRUE)
-  set(ament_cmake_xmllint_FOUND TRUE)  # package name starts with a digit; xmllint rejects it
-  ament_lint_auto_find_test_dependencies()
-
+  # Linting is handled by pre-commit (see .pre-commit-config.yaml), not the
+  # ament_lint test suite, so it is intentionally not wired up here.
   find_package(ament_cmake_gtest REQUIRED)
   find_package(tf2_ros REQUIRED)
 

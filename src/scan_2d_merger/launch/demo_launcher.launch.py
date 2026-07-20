@@ -9,48 +9,48 @@ from launch_ros.descriptions import ComposableNode
 
 ARGUMENTS = [
     DeclareLaunchArgument(
-        'robotname',
-        default_value='example',
-        description='Pass robotname to select configuration for merger',
+        "robotname",
+        default_value="example",
+        description="Pass robotname to select configuration for merger",
     )
 ]
 
 
 def generate_launch_description():
 
-    pkg = get_package_share_directory('scan_2d_merger')
+    pkg = get_package_share_directory("scan_2d_merger")
 
     container = ComposableNodeContainer(
-        package='rclcpp_components',
-        executable='component_container',
-        name='component_manager_node',
-        namespace='',
+        package="rclcpp_components",
+        executable="component_container",
+        name="component_manager_node",
+        namespace="",
         composable_node_descriptions=[
             ComposableNode(
-                package='scan_2d_merger',
-                plugin='util::LaserScanMerger',
-                name='scan_2d_merger_node',
+                package="scan_2d_merger",
+                plugin="util::LaserScanMerger",
+                name="scan_2d_merger_node",
                 parameters=[
                     PathJoinSubstitution(
-                        [pkg, 'config', LaunchConfiguration('robotname'), 'param.yaml']
+                        [pkg, "config", LaunchConfiguration("robotname"), "param.yaml"]
                     )
                 ],
             )
         ],
-        output='screen',
+        output="screen",
     )
 
     start_rviz2 = Node(
-        package='rviz2',
-        executable='rviz2',
-        output='screen',
-        arguments=['-d', path.join(pkg, 'rviz', 'demo_viz.rviz')],
+        package="rviz2",
+        executable="rviz2",
+        output="screen",
+        arguments=["-d", path.join(pkg, "rviz", "demo_viz.rviz")],
     )
 
     play_rosbag = ExecuteProcess(
-        cmd=['ros2', 'bag', 'play', '-l', path.join(pkg, 'test', 'laser_bag')],
+        cmd=["ros2", "bag", "play", "-l", path.join(pkg, "test", "laser_bag")],
         shell=True,
-        output='screen',
+        output="screen",
     )
 
     ld = LaunchDescription(ARGUMENTS)
