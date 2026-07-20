@@ -5,12 +5,6 @@
  * synthetic scans and a static TF, then checks the merged output numerically.
  */
 #include <gtest/gtest.h>
-#include <rclcpp/rclcpp.hpp>
-#include <sensor_msgs/msg/laser_scan.hpp>
-#include <geometry_msgs/msg/transform_stamped.hpp>
-#include <tf2_ros/static_transform_broadcaster.h>
-
-#include "scan_2d_merger/scan_2d_merger.hpp"
 
 #include <atomic>
 #include <chrono>
@@ -20,6 +14,13 @@
 #include <string>
 #include <thread>
 #include <vector>
+
+#include <rclcpp/rclcpp.hpp>
+#include <sensor_msgs/msg/laser_scan.hpp>
+#include <geometry_msgs/msg/transform_stamped.hpp>
+#include <tf2_ros/static_transform_broadcaster.hpp>
+
+#include "scan_2d_merger/scan_2d_merger.hpp"
 
 using namespace std::chrono_literals;
 

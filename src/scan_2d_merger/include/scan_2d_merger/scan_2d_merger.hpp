@@ -40,10 +40,10 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
-#include "tf2_ros/buffer.h"
-#include "tf2_ros/transform_listener.h"
-#include "tf2/exceptions.h"
-#include "tf2/LinearMath/Transform.h"
+#include "tf2_ros/buffer.hpp"
+#include "tf2_ros/transform_listener.hpp"
+#include "tf2/exceptions.hpp"
+#include "tf2/LinearMath/Transform.hpp"
 
 namespace util
 {
