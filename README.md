@@ -1,9 +1,9 @@
 # duatic_scan_2d_merger
 
-[![Jazzy](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/mbloechli/d2906ca9c367e68f47e636da2059be24/raw/duatic_scan_2d_merger-jazzy.json)](https://github.com/Duatic/duatic_scan_2d_merger/actions/workflows/ci.yml)
-[![Kilted](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/mbloechli/d2906ca9c367e68f47e636da2059be24/raw/duatic_scan_2d_merger-kilted.json)](https://github.com/Duatic/duatic_scan_2d_merger/actions/workflows/ci.yml)
-[![Lyrical](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/mbloechli/d2906ca9c367e68f47e636da2059be24/raw/duatic_scan_2d_merger-lyrical.json)](https://github.com/Duatic/duatic_scan_2d_merger/actions/workflows/ci.yml)
-[![Rolling](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/mbloechli/d2906ca9c367e68f47e636da2059be24/raw/duatic_scan_2d_merger-rolling.json)](https://github.com/Duatic/duatic_scan_2d_merger/actions/workflows/ci.yml)
+[![Jazzy](https://github.com/Duatic/duatic_scan_2d_merger/raw/badges/jazzy.svg)](https://github.com/Duatic/duatic_scan_2d_merger/actions/workflows/ci.yml)
+[![Kilted](https://github.com/Duatic/duatic_scan_2d_merger/raw/badges/kilted.svg)](https://github.com/Duatic/duatic_scan_2d_merger/actions/workflows/ci.yml)
+[![Lyrical](https://github.com/Duatic/duatic_scan_2d_merger/raw/badges/lyrical.svg)](https://github.com/Duatic/duatic_scan_2d_merger/actions/workflows/ci.yml)
+[![Rolling](https://github.com/Duatic/duatic_scan_2d_merger/raw/badges/rolling.svg)](https://github.com/Duatic/duatic_scan_2d_merger/actions/workflows/ci.yml)
 
 A Duatic-maintained fork of [2D_Scan_Merger_ROS2](https://github.com/ali-pahlevani/2D_Scan_Merger_ROS2)
 by Ali Pahlevani. This fork tracks the ROS 2 distros used at [Duatic](https://duatic.com) and
